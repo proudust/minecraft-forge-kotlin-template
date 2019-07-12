@@ -2,6 +2,9 @@
 .gradle/
 build/
 
+# Forge Gradle
+run/
+
 # InteliJ
 .idea/**/libraries
 .idea/**/gradle.xml
