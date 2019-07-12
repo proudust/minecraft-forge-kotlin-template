@@ -1,0 +1,13 @@
+# Gradle
+.gradle/
+build/
+
+# InteliJ
+.idea/**/libraries
+.idea/**/gradle.xml
+.idea/**/tasks.xml
+.idea/**/workspace.xml
+*.iml
+
+# Visual Studio Code
+.history/
