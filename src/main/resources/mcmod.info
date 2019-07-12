@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "minecraft-forge-kotlin-template",
+    "name": "Minecraft Forge Kotlin Template",
+    "description": "injection point type '%s'",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
