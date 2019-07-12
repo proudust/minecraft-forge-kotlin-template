@@ -86,9 +86,9 @@ class MinecraftForgeKotlinTemplate {
 
     companion object {
 
-        val MOD_ID = "minecraft-forge-kotlin-template"
-        val MOD_NAME = "Minecraft Forge Kotlin Template"
-        val VERSION = "2019.1-1.2.23"
+        const val MOD_ID = "minecraft-forge-kotlin-template"
+        const val MOD_NAME = "Minecraft Forge Kotlin Template"
+        const val VERSION = "2019.1-1.2.23"
 
         /**
          * This is the instance of your mod as created by Forge. It will never be null.
