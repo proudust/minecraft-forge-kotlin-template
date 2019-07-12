@@ -12,21 +12,13 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 @Mod(
         modid = MinecraftForgeKotlinTemplate.MOD_ID,
         name = MinecraftForgeKotlinTemplate.MOD_NAME,
-        version = MinecraftForgeKotlinTemplate.VERSION
+        version = MinecraftForgeKotlinTemplate.VERSION,
+        modLanguageAdapter = "net.shadowfacts.forgelin.KotlinAdapter"
 )
-class MinecraftForgeKotlinTemplate {
-    companion object {
-
-        const val MOD_ID = "minecraft-forge-kotlin-template"
-        const val MOD_NAME = "Minecraft Forge Kotlin Template"
-        const val VERSION = "2019.1-1.2.23"
-
-        /**
-         * This is the instance of your mod as created by Forge. It will never be null.
-         */
-        @Mod.Instance(MOD_ID)
-        lateinit var Instance: MinecraftForgeKotlinTemplate
-    }
+object MinecraftForgeKotlinTemplate {
+    const val MOD_ID = "minecraft-forge-kotlin-template"
+    const val MOD_NAME = "Minecraft Forge Kotlin Template"
+    const val VERSION = "2019.1-1.2.23"
 
     /**
      * This is the first initialization event. Register tile entities here.
