@@ -54,25 +54,6 @@ class MinecraftForgeKotlinTemplate {
     }
 
     /**
-     * Forge will automatically look up and bind blocks to the fields in this class
-     * based on their registry name.
-     */
-    @GameRegistry.ObjectHolder(MOD_ID)
-    class Blocks/*
-          public static final MySpecialBlock mySpecialBlock = null; // placeholder for special block below
-      */
-
-    /**
-     * Forge will automatically look up and bind items to the fields in this class
-     * based on their registry name.
-     */
-    @GameRegistry.ObjectHolder(MOD_ID)
-    class Items/*
-          public static final ItemBlock mySpecialBlock = null; // itemblock for the block above
-          public static final MySpecialItem mySpecialItem = null; // placeholder for special item below
-      */
-
-    /**
      * This is a special class that listens to registry events, to allow creation of mod blocks and items at the proper time.
      */
     @Mod.EventBusSubscriber
@@ -83,8 +64,8 @@ class MinecraftForgeKotlinTemplate {
         @SubscribeEvent
         fun addItems(event: RegistryEvent.Register<Item>) {
             /*
-             event.getRegistry().register(new ItemBlock(Blocks.myBlock).setRegistryName(MOD_ID, "myBlock"));
-             event.getRegistry().register(new MySpecialItem().setRegistryName(MOD_ID, "mySpecialItem"));
+            event.registry.register(ItemBlock(MySpecialBlock).setRegistryName(MOD_ID, "myBlock"))
+            event.registry.register(MySpecialItem.setRegistryName(MOD_ID, "mySpecialItem"))
             */
         }
 
@@ -94,29 +75,17 @@ class MinecraftForgeKotlinTemplate {
         @SubscribeEvent
         fun addBlocks(event: RegistryEvent.Register<Block>) {
             /*
-             event.getRegistry().register(new MySpecialBlock().setRegistryName(MOD_ID, "mySpecialBlock"));
+            event.registry.register(MySpecialBlock.setRegistryName(MOD_ID, "mySpecialBlock"))
             */
         }
     }
 
-    companion object {
-
-        const val MOD_ID = "minecraft-forge-kotlin-template"
-        const val MOD_NAME = "Minecraft Forge Kotlin Template"
-        const val VERSION = "2019.1-1.2.23"
-
-        /**
-         * This is the instance of your mod as created by Forge. It will never be null.
-         */
-        @Mod.Instance(MOD_ID)
-        var INSTANCE: MinecraftForgeKotlinTemplate? = null
-    }
     /* EXAMPLE ITEM AND BLOCK - you probably want these in separate files
-    public static class MySpecialItem extends Item {
+    object MySpecialItem : Item() {
 
     }
 
-    public static class MySpecialBlock extends Block {
+    object MySpecialBlock : Block() {
 
     }
     */
