@@ -6,6 +6,7 @@ build/
 run/
 
 # InteliJ
+.idea/**/dictionaries
 .idea/**/libraries
 .idea/**/gradle.xml
 .idea/**/tasks.xml
