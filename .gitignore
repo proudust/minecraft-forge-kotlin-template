@@ -11,6 +11,7 @@ run/
 .idea/**/gradle.xml
 .idea/**/tasks.xml
 .idea/**/workspace.xml
+out/
 *.iml
 
 # Visual Studio Code
