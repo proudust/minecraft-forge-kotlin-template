@@ -3,15 +3,30 @@ package io.github.proudust.minecraftforgekotlintemplate
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 import net.minecraftforge.event.RegistryEvent
+import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.common.event.FMLInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
-import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.fml.common.registry.GameRegistry
 
-@Mod(modid = MinecraftForgeKotlinTemplate.MOD_ID, name = MinecraftForgeKotlinTemplate.MOD_NAME, version = MinecraftForgeKotlinTemplate.VERSION)
+@Mod(
+        modid = MinecraftForgeKotlinTemplate.MOD_ID,
+        name = MinecraftForgeKotlinTemplate.MOD_NAME,
+        version = MinecraftForgeKotlinTemplate.VERSION
+)
 class MinecraftForgeKotlinTemplate {
+    companion object {
+
+        const val MOD_ID = "minecraft-forge-kotlin-template"
+        const val MOD_NAME = "Minecraft Forge Kotlin Template"
+        const val VERSION = "2019.1-1.2.23"
+
+        /**
+         * This is the instance of your mod as created by Forge. It will never be null.
+         */
+        @Mod.Instance(MOD_ID)
+        lateinit var Instance: MinecraftForgeKotlinTemplate
+    }
 
     /**
      * This is the first initialization event. Register tile entities here.
