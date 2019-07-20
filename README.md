@@ -4,6 +4,10 @@ Minecraft 1.12.2 Mod template using Forge and Kotlin.
 
 ## Getting Started
 ### Clone template
+Please click [Use this template](https://github.com/proudust/minecraft-forge-kotlin-template/generate)
+
+or
+
 ```sh
 git clone --depth=1 https://github.com/proudust/minecraft-forge-kotlin-template <your_project_name>
 cd <your_project_name>
