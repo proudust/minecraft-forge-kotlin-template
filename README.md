@@ -27,6 +27,14 @@ modVersion=<your_project_version>
 modBaseName=<your_project_name>
 ```
 
+**mcmod.info**
+```json
+{
+    "modid": "<your_package_name>",
+    "name": "<Your Project Name>",
+}
+```
+
 **MinecraftForgeKotlinTemplate.kt**
 ```kt
 package <your_package_name>.<your_project_name>
