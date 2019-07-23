@@ -11,6 +11,9 @@
     "credits": "",
     "logoFile": "",
     "screenshots": [],
+    "requiredMods": [
+      "forgelin"
+    ],
     "dependencies": []
   }
 ]
