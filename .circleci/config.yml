@@ -1,0 +1,60 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+    steps:
+      - checkout
+      - run:
+          name: Gradle Wapper に実行権限付与
+          command: sudo chmod +x ./gradlew
+      - restore_cache:
+          name: ビルド環境をキャッシュから復元
+          keys:
+            - jars-{{ checksum "build.gradle.kts" }}
+            - jars-
+      - run:
+          name: ビルド
+          command: ./gradlew setupCiWorkspace build
+      - save_cache:
+          name: ビルド環境をキャッシュに保存
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle.kts" }}
+      - store_artifacts:
+          path: build/libs
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/libs
+
+  release:
+    docker:
+      - image: circleci/golang:1.8
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: "GitHub Release に Zip をアップロード"
+          command: |
+            go get github.com/tcnksm/ghr
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} \
+              -n "ver${CIRCLE_TAG}" -delete -draft ${CIRCLE_TAG} build/libs/
+
+workflows:
+  version: 2
+  main:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /.*/
+      - release:
+          requires:
+            - build
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /.*/
