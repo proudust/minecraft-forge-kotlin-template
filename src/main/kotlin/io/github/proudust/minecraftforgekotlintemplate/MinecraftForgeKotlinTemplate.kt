@@ -10,10 +10,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 
 @Mod(
-        modid = MinecraftForgeKotlinTemplate.MOD_ID,
-        name = MinecraftForgeKotlinTemplate.MOD_NAME,
-        version = MinecraftForgeKotlinTemplate.VERSION,
-        modLanguageAdapter = "net.shadowfacts.forgelin.KotlinAdapter"
+    modid = MinecraftForgeKotlinTemplate.MOD_ID,
+    name = MinecraftForgeKotlinTemplate.MOD_NAME,
+    version = MinecraftForgeKotlinTemplate.VERSION,
+    modLanguageAdapter = "net.shadowfacts.forgelin.KotlinAdapter"
 )
 object MinecraftForgeKotlinTemplate {
     const val MOD_ID = "minecraft-forge-kotlin-template"

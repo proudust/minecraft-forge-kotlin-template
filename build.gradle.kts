@@ -71,8 +71,8 @@ tasks.withType<Jar> {
     // replace stuff in mcmod.info, nothing else
     filesMatching("/mcmod.info") {
         expand(mapOf(
-                "version" to project.version,
-                "mcversion" to project.minecraft.version
+            "version" to project.version,
+            "mcversion" to project.minecraft.version
         ))
     }
 }
