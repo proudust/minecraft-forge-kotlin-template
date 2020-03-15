@@ -17,7 +17,7 @@ buildscript {
     }
     dependencies {
         classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.41")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50")
     }
 }
 
@@ -54,8 +54,8 @@ repositories {
 }
 
 dependencies {
-    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.41")
-    compile("net.shadowfacts:Forgelin:1.8.3")
+    compile("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.50")
+    compile("net.shadowfacts:Forgelin:1.8.4")
 }
 
 // processResources
