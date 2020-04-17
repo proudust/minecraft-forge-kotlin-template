@@ -1,5 +1,6 @@
 package io.github.proudust.minecraftforgekotlintemplate
 
+import io.github.proudust.minecraft_forge_kotlin_template.BuildConfig
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 import net.minecraftforge.event.RegistryEvent
@@ -18,7 +19,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent
 object MinecraftForgeKotlinTemplate {
     const val MOD_ID = "minecraft-forge-kotlin-template"
     const val MOD_NAME = "Minecraft Forge Kotlin Template"
-    const val VERSION = "2019.1-1.2.23"
+    const val VERSION = BuildConfig.MOD_VERSION
 
     /**
      * This is the first initialization event. Register tile entities here.

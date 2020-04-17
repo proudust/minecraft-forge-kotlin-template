@@ -15,6 +15,7 @@ buildscript {
 plugins {
     java
     scala
+    id("com.github.gmazzo.buildconfig") version "1.7.1"
 }
 
 apply {
@@ -34,6 +35,10 @@ val Project.minecraft: UserBaseExtension
 
 version = modVersion
 group = modGroup
+
+buildConfig {
+    buildConfigField("String", "MOD_VERSION", "\"${modVersion}\"")
+}
 
 // minecraft
 configure<UserBaseExtension> {
