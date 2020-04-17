@@ -16,6 +16,7 @@ plugins {
     java
     scala
     id("com.github.gmazzo.buildconfig") version "1.7.1"
+    id("org.ajoberstar.grgit") version "4.0.2"
 }
 
 apply {
@@ -33,11 +34,19 @@ val mappingVersion: String by project
 val Project.minecraft: UserBaseExtension
     get() = extensions.getByName<UserBaseExtension>("minecraft")
 
-version = modVersion
+version = if (modVersion != "auto") modVersion else {
+    val tags = grgit.tag.list()
+    val describe = when {
+        tags.any() -> grgit.describe(mapOf("longDescr" to false, "tags" to true))
+        else -> grgit.head().abbreviatedId
+    }
+    val dirty = if (!grgit.status().isClean()) "+dirty" else ""
+    "$describe$dirty"
+}
 group = modGroup
 
 buildConfig {
-    buildConfigField("String", "MOD_VERSION", "\"${modVersion}\"")
+    buildConfigField("String", "MOD_VERSION", "\"$version\"")
 }
 
 // minecraft
