@@ -1,19 +1,10 @@
 import net.minecraftforge.gradle.user.UserBaseExtension
 import org.gradle.jvm.tasks.Jar
 
-// gradle.properties
-val modGroup: String by extra
-val modVersion: String by extra
-val modBaseName: String by extra
-val forgeVersion: String by extra
-val mappingVersion: String by extra
-
 buildscript {
     repositories {
         jcenter()
-        maven(url = "https://files.minecraftforge.net/maven") {
-            name = "forge"
-        }
+        maven(url = "https://files.minecraftforge.net/maven")
     }
     dependencies {
         classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
@@ -31,9 +22,20 @@ apply {
     plugin("kotlin")
 }
 
+// gradle.properties
+val modGroup: String by project
+val modVersion: String by project
+val modBaseName: String by project
+val forgeVersion: String by project
+val mappingVersion: String by project
+
+val Project.minecraft: UserBaseExtension
+    get() = extensions.getByName<UserBaseExtension>("minecraft")
+
 version = modVersion
 group = modGroup
 
+// minecraft
 configure<UserBaseExtension> {
     version = forgeVersion
     runDir = "run"
@@ -59,8 +61,6 @@ dependencies {
 }
 
 // processResources
-val Project.minecraft: UserBaseExtension
-    get() = extensions.getByName<UserBaseExtension>("minecraft")
 tasks.withType<Jar> {
     // this will ensure that this task is redone when the versions change.
     inputs.properties += "version" to project.version
@@ -70,9 +70,11 @@ tasks.withType<Jar> {
 
     // replace stuff in mcmod.info, nothing else
     filesMatching("/mcmod.info") {
-        expand(mapOf(
-            "version" to project.version,
-            "mcversion" to project.minecraft.version
-        ))
+        expand(
+            mapOf(
+                "version" to project.version,
+                "mcversion" to project.minecraft.version
+            )
+        )
     }
 }
