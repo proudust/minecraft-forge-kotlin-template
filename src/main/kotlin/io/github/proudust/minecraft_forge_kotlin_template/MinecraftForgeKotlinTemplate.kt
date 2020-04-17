@@ -1,6 +1,5 @@
-package io.github.proudust.minecraftforgekotlintemplate
+package io.github.proudust.minecraft_forge_kotlin_template
 
-import io.github.proudust.minecraft_forge_kotlin_template.BuildConfig
 import net.minecraft.block.Block
 import net.minecraft.item.Item
 import net.minecraftforge.event.RegistryEvent
