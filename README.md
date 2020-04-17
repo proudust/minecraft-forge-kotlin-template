@@ -44,7 +44,6 @@ package <your_package_name>.<your_project_name>
 object <YourProjectName> {
     const val MOD_ID = <your_project_name>
     const val MOD_NAME = <Your Project Name>
-    const val VERSION = <your_project_version>
 
     //...
 }
@@ -52,8 +51,14 @@ object <YourProjectName> {
 
 ## Dependencies
 
+### Minecraft MOD
+
 - [Minecraft Forge](https://files.minecraftforge.net/)
 - [shadowfacts/Forgelin](https://github.com/shadowfacts/Forgelin)
+
+### Gradle Plugin
+
+- [gradle-buildconfig-plugin](https://github.com/gmazzo/gradle-buildconfig-plugin)
 
 ## References
 
