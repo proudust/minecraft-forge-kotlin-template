@@ -50,6 +50,15 @@ object <YourProjectName> {
 }
 ```
 
+**LICENSE**
+```md
+MIT License
+
+Copyright (c) [Year] [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+```
+
 ## Dependencies
 
 - [Minecraft Forge](https://files.minecraftforge.net/)
