@@ -11,12 +11,11 @@ val mappingVersion: String by extra
 buildscript {
     repositories {
         jcenter()
-        maven(url = "https://files.minecraftforge.net/maven") {
-            name = "forge"
-        }
+        maven(url = "https://files.minecraftforge.net/maven")
+        maven(url = "https://oss.sonatype.org/content/repositories/snapshots")
     }
     dependencies {
-        classpath("net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT")
+        classpath("com.anatawa12.forge:ForgeGradle:2.3-1.0.1")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.50")
     }
 }

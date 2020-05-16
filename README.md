@@ -1,9 +1,12 @@
 # Minecraft Forge Kotlin Template
+
 Minecraft 1.12.2 で Forge と Kotlin を用いた Mod のテンプレートです。  
 Minecraft 1.12.2 Mod template using Forge and Kotlin.  
 
 ## Getting Started
+
 ### Clone template
+
 Please click [Use this template](https://github.com/proudust/minecraft-forge-kotlin-template/generate)
 
 or
@@ -15,19 +18,23 @@ rm -rf .git
 ```
 
 ### Install dependencies
+
 ```sh
 ./gradlew build
 ```
 
 ### Fix properties
+
 **gradle.properties**
-```
+
+```properties
 modGroup=<your_package_name>
 modVersion=<your_project_version>
 modBaseName=<your_project_name>
 ```
 
 **mcmod.info**
+
 ```json
 {
     "modid": "<your_package_name>",
@@ -36,6 +43,7 @@ modBaseName=<your_project_name>
 ```
 
 **MinecraftForgeKotlinTemplate.kt**
+
 ```kt
 package <your_package_name>.<your_project_name>
 
@@ -51,6 +59,7 @@ object <YourProjectName> {
 ```
 
 **LICENSE**
+
 ```md
 MIT License
 
@@ -62,9 +71,11 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 ## Dependencies
 
 - [Minecraft Forge](https://files.minecraftforge.net/)
+- [anatawa12/ForgeGradle-2.3](https://github.com/anatawa12/ForgeGradle-2.3)
 - [shadowfacts/Forgelin](https://github.com/shadowfacts/Forgelin)
 
 ## References
 
 - [C6H2Cl2/MCDevNightSample](https://github.com/C6H2Cl2/MCDevNightSample)
 - [therealfarfetchd/build.gradle.kts](https://gist.github.com/therealfarfetchd/db8fc601df89703a360bccc0395ec590)
+- [How to execute runClient in ForgeGradle for 1.12 or older with newest jdk8](https://gist.github.com/anatawa12/d61520430a96ba5939cd5a66dbba5bb3)
