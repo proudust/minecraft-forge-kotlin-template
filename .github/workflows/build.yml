@@ -22,7 +22,7 @@ jobs:
           java-version: 8
 
       - name: Build
-        run: chmod +x ./gradlew && ./gradlew setupCiWorkspace build
+        run: chmod +x ./gradlew && ./gradlew build
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v1
