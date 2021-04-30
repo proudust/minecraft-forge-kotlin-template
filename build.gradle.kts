@@ -101,3 +101,12 @@ tasks.withType<Jar> {
         ))
     }
 }
+
+// workaround for userdev bug
+tasks.create("copyResourceToClasses", Copy::class) {
+    tasks.classes.get().dependsOn(this)
+    dependsOn(tasks.processResources.get())
+    onlyIf { gradle.taskGraph.hasTask(tasks.getByName("prepareRuns")) }
+    into("$buildDir/classes/kotlin/main")
+    from(tasks.processResources.get().destinationDir)
+}
